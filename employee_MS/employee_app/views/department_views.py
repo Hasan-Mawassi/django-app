@@ -9,3 +9,8 @@ class DepartmentCreateView(generics.ListCreateAPIView):
 class DepartmentDeleteView(generics.DestroyAPIView):
     queryset = Department.objects.all()
     serializer_class = DepartmentSerializer  
+
+class DepartmentUpdateView(generics.UpdateAPIView):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
+    
