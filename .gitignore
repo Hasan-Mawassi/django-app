@@ -1,4 +1,11 @@
-
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.log
 
 # Environment
 .env
@@ -12,7 +19,7 @@ venv.bak/
 
 
 
-
+# If you want to track Pipfile.lock, remove the above line
 
 # VS Code
 .vscode/
@@ -25,4 +32,32 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 
+# Django specific
 
+media/
+staticfiles/
+static_root/
+local_settings.py
+
+# Migrations (optional — include only if you're tracking production-ready migrations)
+**/migrations/*.pyc
+**/migrations/__pycache__/
+# Uncomment the next line if you want to ignore all migration files:
+# **/migrations/*.py
+
+# Pytest / Coverage
+.coverage
+htmlcov/
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+test-results/
+junit-*.xml
+
+# IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
