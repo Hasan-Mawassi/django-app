@@ -17,3 +17,13 @@ class Employee(models.Model):
         Department, on_delete=models.CASCADE, related_name="employees"
     )
     hire_date = models.DateField()
+
+
+class WorkSchedule(models.Model):
+    start_time = models.DateField()
+    end_time = models.DateField()
+    work_day  = models.CharField(max_length=15)
+    employee = models.ForeignKey(
+        Employee, on_delete=models.CASCADE ,related_name="work_schedules"
+    )
+    
