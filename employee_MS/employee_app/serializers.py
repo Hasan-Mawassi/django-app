@@ -9,3 +9,8 @@ class EmployeeSerializer(serializers.ModelSerializer):
             'password': {'write_only': True}  
         }
 
+class DepartmentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =  Department
+        fields = '__all__'
+
