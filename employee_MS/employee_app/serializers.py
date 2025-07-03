@@ -14,3 +14,7 @@ class DepartmentSerializer(serializers.ModelSerializer):
         model =  Department
         fields = '__all__'
 
+class WorkScheduleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =  WorkSchedule
+        fields = '__all__'
