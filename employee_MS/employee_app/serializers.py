@@ -34,10 +34,11 @@ class HRRegisterSerializer(serializers.Serializer):
         department = validated_data["department"]
         hire_date = validated_data["hire_date"]
 
-        # Create User
         user = User.objects.create_user(username=username, password=password)
-
-        # Create HR profile
+        user.is_staff = True        
+        user.is_active = True      
+        user.save()                 
+       
         HR.objects.create(user=user, department=department, hire_date=hire_date)
 
         return user
