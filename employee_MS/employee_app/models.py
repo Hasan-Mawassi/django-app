@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 class Department(models.Model):
     name = models.CharField(max_length=200)
@@ -32,3 +32,11 @@ class WorkSchedule(models.Model):
     
     def __str__(self):
         return f"{self.work_day} - {self.employee.first_name}"
+
+class HR(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='hr')
+    department = models.CharField(max_length=100)
+    hire_date = models.DateField()
+
+    def __str__(self):
+        return self.user.username
