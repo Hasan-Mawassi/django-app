@@ -1,7 +1,7 @@
 
 # 📁 Employee Management System Backend (Django REST Framework)
 
-## 🚀 Purpose
+##  Purpose
 
 This project is a **learning-focused backend API** for managing company employees, departments, and HR authentication using **Django** and **Django REST Framework**.
 
@@ -9,6 +9,7 @@ The goal is to:
 - Learn Django's structure (models, views, serializers, routing)
 - Use JWT-based authentication with `SimpleJWT`
 - Practice RESTful API development with SOLID principles
+- Learn how to write unit tests using Django's testing framework and Faker
 
 ## 🧠 Technologies Used
 
@@ -18,24 +19,30 @@ The goal is to:
 | Django REST Framework | API building |
 | SimpleJWT (`djangorestframework-simplejwt`) | JWT authentication (login/refresh tokens) |
 | SQLite (default) | Lightweight development database |
+| Faker | Generate fake names, emails, etc. for testing |
+| Django Test Framework | Automated testing of APIs |
 
 ## 📂 Folder Structure
 
 ```
 employee_MS/
-├── employee_MS/             # Project settings
-│   └── urls.py              # Main routing file
-├── employee_app/               # App for HR, Employee, Department logic
-│   ├── models.py            # Employee, Department, HR models
-│   ├── serializers.py       # DRF serializers for all models
-│   ├── urls.py              # API route definitions
-│   ├── views/               # Separated view logic
+├── employee_MS/               # Project settings
+│   └── urls.py                # Main routing file
+├── employee_app/              # App for HR, Employee, Department logic
+│   ├── models.py              # Employee, Department, HR models
+│   ├── serializers.py         # DRF serializers for all models
+│   ├── urls.py                # API route definitions
+│   ├── views/                 # Separated view logic
 │   │   ├── employee_views.py
 │   │   ├── department_views.py
 │   │   └── hr_views.py
-│   └── permissions.py       # Custom HR-only permission
+│   ├── tests/                 # API test cases
+│   │   ├── __init__.py
+│   │   ├── hr_test.py         # Tests related to HR (login, register)
+│   │   └── employees_test.py  # Tests for creating and updating employees
+│   └── permissions.py         # Custom HR-only permission
 ├── manage.py
-└── README.md                
+└── README.md                  # You are here!
 ```
 
 ## 🔐 Authentication
@@ -86,8 +93,31 @@ employee_MS/
    { "refresh": "<refresh_token>" }
    ```
 
+## 🧪 Testing
 
+- Tests are located in the `employee_app/tests/` folder.
+- `Faker` is used to generate realistic fake data like emails, names, dates.
+- Tests cover endpoints like HR login, HR registration, employee creation, and update.
 
+### Run all tests
+
+```bash
+python manage.py test
+```
+
+### Example test output
+
+```
+Found 2 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+..
+----------------------------------------------------------------------
+Ran 2 tests in 4.443s
+
+OK
+Destroying test database for alias 'default'...
+```
 
 ## 🛠️ Getting Started (Development)
 
