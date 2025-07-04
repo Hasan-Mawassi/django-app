@@ -20,3 +20,9 @@ class EmployeeUpdateView(generics.UpdateAPIView):
      serializer_class = EmployeeSerializer
      permission_classes = [IsAuthenticated, IsHR]
      lookup_field = 'id'
+
+class EmployeeDeleteView(generics.DestroyAPIView):
+     queryset = Employee.objects.all()
+     serializer_class = EmployeeSerializer
+     permission_classes = [IsAuthenticated, IsHR]
+     
