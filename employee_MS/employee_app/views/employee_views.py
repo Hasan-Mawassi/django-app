@@ -9,3 +9,8 @@ class EmployeeListView(generics.ListAPIView):
     queryset = Employee.objects.all()
     serializer_class = EmployeeSerializer
     permission_classes = [IsAuthenticated, IsHR]
+
+class EmployeeCreateView(generics.CreateAPIView):
+     queryset = Employee.objects.all()
+     serializer_class = EmployeeSerializer
+     permission_classes = [IsAuthenticated, IsHR]
