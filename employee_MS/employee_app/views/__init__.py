@@ -1,8 +1,11 @@
 from .department_views import DepartmentCreateView , DepartmentDeleteView , DepartmentUpdateView
-from .employee_views import EmployeeListCreateView
+from .employee_views import EmployeeListView , EmployeeCreateView , EmployeeUpdateView , EmployeeDeleteView
 from .hr_views import HRRegisterView , HRLoginView
 __all__ = [
-    'EmployeeListCreateView', 
+    'EmployeeListView', 
+    'EmployeeCreateView',
+    'EmployeeUpdateView',
+    'EmployeeDeleteView',
     'DepartmentCreateView', 
     'DepartmentDeleteView', 
     'DepartmentUpdateView',
