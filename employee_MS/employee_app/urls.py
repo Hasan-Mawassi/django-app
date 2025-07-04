@@ -1,11 +1,12 @@
 from django.urls import path
-from .views import EmployeeListView , DepartmentCreateView , DepartmentDeleteView ,DepartmentUpdateView , HRRegisterView , HRLoginView
+from . import views
 
 urlpatterns = [
-    path('employees/', EmployeeListView.as_view(), name='employee-list-create'),
-    path('departments/', DepartmentCreateView.as_view(), name='department-create'), 
-    path('departments/<int:pk>/', DepartmentDeleteView.as_view(), name='department-delete'),
-    path('departments/<int:pk>/update/', DepartmentUpdateView.as_view(), name='department-update'),
-    path('hr-login/', HRLoginView.as_view(), name='hr-login'),
-    path('hr-register/', HRRegisterView.as_view(), name='hr-register'),
+    path('employees/', views.EmployeeListView.as_view(), name='employee-list'),
+    path('employees/create/', views.EmployeeCreateView.as_view(), name='employee-create'),
+    path('departments/', views.DepartmentCreateView.as_view(), name='department-create'), 
+    path('departments/<int:pk>/', views.DepartmentDeleteView.as_view(), name='department-delete'),
+    path('departments/<int:pk>/update/', views.DepartmentUpdateView.as_view(), name='department-update'),
+    path('hr-login/', views.HRLoginView.as_view(), name='hr-login'),
+    path('hr-register/', views.HRRegisterView.as_view(), name='hr-register'),
 ]
