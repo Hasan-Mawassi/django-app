@@ -14,3 +14,9 @@ class EmployeeCreateView(generics.CreateAPIView):
      queryset = Employee.objects.all()
      serializer_class = EmployeeSerializer
      permission_classes = [IsAuthenticated, IsHR]
+
+class EmployeeUpdateView(generics.UpdateAPIView):
+     queryset = Employee.objects.all()
+     serializer_class = EmployeeSerializer
+     permission_classes = [IsAuthenticated, IsHR]
+     lookup_field = 'id'
